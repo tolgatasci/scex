@@ -1,4 +1,4 @@
-# scex
+# SCex
  SoundCloud v2 Api Java Library
  
 ## Example Code
