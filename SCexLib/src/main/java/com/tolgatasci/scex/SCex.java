@@ -21,20 +21,20 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class YTex {
+public class SCex {
     private Gson gson;
     public static Context con;
     public Api api;
-    public YTex(Context contextx){
+    public SCex(Context contextx){
        con = contextx;
        api = new Api();
     }
-    public YTex(Context contextx,String client_id){
+    public SCex(Context contextx,String client_id){
         con = contextx;
         Config.CLIENT_ID = client_id;
         api = new Api();
     }
-    public YTex(Context contextx,String client_id,String sc_a_id){
+    public SCex(Context contextx,String client_id,String sc_a_id){
         con = contextx;
         Config.CLIENT_ID = client_id;
         Config.SC_A_ID   = sc_a_id;

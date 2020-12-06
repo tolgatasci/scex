@@ -20,9 +20,9 @@ Add the dependency
 ## Example Code
 
 ### Call Class
-	YTex yt = new YTex(getApplicationContext(),"cliend_id need");
+	SCex yt = new SCex(getApplicationContext(),"cliend_id need");
 	# add user_id parametre api
-	YTex yt = new YTex(getApplicationContext(),"cliend_id need","sc_a_id parametre");
+	SCex yt = new SCex(getApplicationContext(),"cliend_id need","sc_a_id parametre");
 ### Tracks
 
 	# multiple id insert sample 7119603,93675143
