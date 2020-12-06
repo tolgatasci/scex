@@ -7,7 +7,8 @@
 	YTex yt = new YTex(getApplicationContext(),"cliend_id need");
 	# add user_id parametre api
 	YTex yt = new YTex(getApplicationContext(),"cliend_id need","user_id parametre");
-###
+### Tracks
+
 	# multiple id insert sample 7119603,93675143
 	yt.Tracks("7119603", new CallbackApi.ResData<List<TrackItem>>() {
             @Override
