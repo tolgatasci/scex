@@ -42,6 +42,9 @@ Add the dependency
                Log.e("work",response.getTitle()+ "");
             }
         });
+		
+	yt.Playlist(159147470, (CallbackApi.ResData<Playlist>) response -> Log.e("work",response.getTitle()+ ""));
+	
 ### Track Comments
 	yt.Comments(335233410, new CallbackApi.ResData<SearchResponse>() {
             @Override
@@ -49,13 +52,17 @@ Add the dependency
                Log.e("work",response.getCollection().get(0).getBody()+ "");
             }
         });		
+	yt.Comments(335233410, (CallbackApi.ResData<SearchResponse>) response -> Log.e("work",response.getCollection().get(0).getBody()+ ""));
+	
 ### User
 	yt.User(4816305, new CallbackApi.ResData<SearchResponse>() {
             @Override
             public void data(SearchResponse response) {
                Log.e("work",response.getCollection().get(0).getTrack().getTitle()+ "");
             }
-        });		
+        });
+	yt.User(4816305, (CallbackApi.ResData<SearchResponse>) response -> Log.e("work",response.getCollection().get(0).getTrack().getTitle()+ ""));
+	
 ### Search
 	yt.Search("tarkan", new CallbackApi.ResData<SearchResponse>() {
             @Override
@@ -63,6 +70,8 @@ Add the dependency
                Log.e("work",response.getCollection().size() + "");
             }
         });	
+	yt.Search("tarkan", (CallbackApi.ResData<SearchResponse>) response -> Log.e("work",response.getCollection().size() + ""));
+	
 ### More every method
 	yt.more(response.getNextHref(), response, new CallbackApi.ResData<SearchResponse>() {
                     @Override
@@ -70,6 +79,7 @@ Add the dependency
                         Log.e("work 2",response.getCollection().size() + "");
                     }
 		});
+	yt.more(response.getNextHref(), response, (CallbackApi.ResData<SearchResponse>) response1 -> Log.e("work 2", response1.getCollection().size() + ""));	
 ### Search Albums
 	yt.SearchAlbum("tarkan", new CallbackApi.ResData<SearchResponse>() {
             @Override
@@ -77,6 +87,8 @@ Add the dependency
                Log.e("work",response.getCollection().size() + "");
             }
         });
+	yt.SearchAlbum("tarkan", (CallbackApi.ResData<SearchResponse>) response -> Log.e("work",response.getCollection().size() + ""));
+	
 ### Search Tracks
 	yt.SearchTracks("tarkan", new CallbackApi.ResData<SearchResponse>() {
             @Override
@@ -84,7 +96,8 @@ Add the dependency
                Log.e("work",response.getCollection().size() + "");
             }
         });		
-		
+	yt.SearchTracks("tarkan", (CallbackApi.ResData<SearchResponse>) response -> Log.e("work",response.getCollection().size() + ""));
+	
 ### Search Users		
 	yt.SearchUser("tarkan", new CallbackApi.ResData<SearchResponse>() {
             @Override
@@ -93,6 +106,8 @@ Add the dependency
                Log.e("work",response.getCollection().size() + "");
             }
         });
+	yt.SearchUser("tarkan", (CallbackApi.ResData<SearchResponse>) response -> Log.e("work",response.getCollection().size() + ""));
+	
 ### Search Playlist		
 	yt.SearchPlaylist("tarkan", new CallbackApi.ResData<SearchResponse>() {
             @Override
@@ -101,6 +116,8 @@ Add the dependency
                Log.e("work",response.getCollection().size() + "");
             }
         });
+	yt.SearchPlaylist("tarkan", (CallbackApi.ResData<SearchResponse>) response -> Log.e("work",response.getCollection().size() + ""));
+	
 ### Add Client ID
 	try {
 		// result  https://www.domain.com/?client_id=example
