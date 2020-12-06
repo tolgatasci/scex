@@ -10,10 +10,11 @@ Add it in your root build.gradle at the end of repositories:
 			}
 	
 	}	
+
 Add the dependency
 
 	dependencies {
-	        implementation 'com.github.tolgatasci:scex:Tag'
+	        implementation 'com.github.tolgatasci:scex:v2'
 	}
 	
 ## Example Code
