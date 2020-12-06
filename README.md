@@ -17,7 +17,7 @@
             }
         });
 ### Search
-	yt.Search("tarkan", new CallbackApi.ResData() {
+	yt.Search("tarkan", new CallbackApi.ResData<SearchResponse>() {
             @Override
             public void data(SearchResponse response) {
                Log.e("work",response.getCollection().size() + "");
@@ -53,3 +53,10 @@
                Log.e("work",response.getCollection().size() + "");
             }
         });
+### Add Client ID
+	try {
+		// result  https://www.domain.com/?client_id=example
+		String new_url =  yt.add_client_id("https://www.domain.com/");
+    } catch (URISyntaxException e) {
+            e.printStackTrace();
+    }
