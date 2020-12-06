@@ -15,7 +15,7 @@ Add it in your root build.gradle at the end of repositories:
 Add the dependency
 
 	dependencies {
-	        implementation 'com.github.tolgatasci:scex:main'
+	        implementation 'com.github.tolgatasci:scex:v2'
 	}
 	
 ## Example Code
