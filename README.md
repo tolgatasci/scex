@@ -4,7 +4,10 @@
 ## Example Code
 
 ### Call Class
-	YTex yt = new YTex(getApplicationContext());
+	YTex yt = new YTex(getApplicationContext(),"cliend_id need");
+	# add user_id parametre api
+	YTex yt = new YTex(getApplicationContext(),"cliend_id need","user_id parametre");
+	
 ### Search
 	yt.Search("tarkan", new CallbackApi.ResData() {
             @Override
