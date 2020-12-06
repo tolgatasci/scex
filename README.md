@@ -1,15 +1,21 @@
 # SCex
  SoundCloud v2 Api Java Library
 ## Install
+Add it in your root build.gradle at the end of repositories:
 
-settings.gradle open and change 
-
-	include ':app',':scex-main'
-your app build.gradle open and add
-
-	implementation project(path: ':scex-main')
+	allprojects {
+			repositories {
+				...
+				maven { url 'https://jitpack.io' }
+			}
 	
- 
+	}	
+Add the dependency
+
+	dependencies {
+	        implementation 'com.github.tolgatasci:scex:Tag'
+	}
+	
 ## Example Code
 
 ### Call Class
