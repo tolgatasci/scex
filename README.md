@@ -23,3 +23,10 @@
                Log.e("work",response.getCollection().size() + "");
             }
         });
+### Search Tracks
+	yt.SearchTracks("tarkan", new CallbackApi.ResData() {
+            @Override
+            public void data(SearchResponse response) {
+               Log.e("work",response.getCollection().size() + "");
+            }
+        });		
