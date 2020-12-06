@@ -3,8 +3,10 @@
 ## Install
 
 settings.gradle open and change 
+
 	include ':app',':scex-main'
 your app build.gradle open and add
+
 	implementation project(path: ':scex-main')
 	
  
