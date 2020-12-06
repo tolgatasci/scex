@@ -16,6 +16,14 @@
                Log.e("work",response.size()+ "");
             }
         });
+		
+### Playlist
+	yt.Playlist(159147470, new CallbackApi.ResData<Playlist>() {
+            @Override
+            public void data(Playlist response) {
+               Log.e("work",response.getTitle()+ "");
+            }
+        });
 ### Search
 	yt.Search("tarkan", new CallbackApi.ResData<SearchResponse>() {
             @Override
