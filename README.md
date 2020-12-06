@@ -24,6 +24,13 @@
                Log.e("work",response.getTitle()+ "");
             }
         });
+### User
+	yt.User(4816305, new CallbackApi.ResData<SearchResponse>() {
+            @Override
+            public void data(SearchResponse response) {
+               Log.e("work",response.getCollection().get(0).getTrack().getTitle()+ "");
+            }
+        });		
 ### Search
 	yt.Search("tarkan", new CallbackApi.ResData<SearchResponse>() {
             @Override
