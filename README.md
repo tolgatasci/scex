@@ -1,5 +1,12 @@
 # SCex
  SoundCloud v2 Api Java Library
+## Install
+
+settings.gradle open and change 
+	include ':app',':scex-main'
+your app build.gradle open and add
+	implementation project(path: ':scex-main')
+	
  
 ## Example Code
 
