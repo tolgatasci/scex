@@ -53,6 +53,14 @@
                Log.e("work",response.getCollection().size() + "");
             }
         });
+### Search Playlist		
+	yt.SearchPlaylist("tarkan", new CallbackApi.ResData<SearchResponse>() {
+            @Override
+            public void data(SearchResponse response) {
+
+               Log.e("work",response.getCollection().size() + "");
+            }
+        });
 ### Add Client ID
 	try {
 		// result  https://www.domain.com/?client_id=example
