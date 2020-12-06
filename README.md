@@ -2,6 +2,9 @@
  SoundCloud v2 Api Java Library
  
 ## Example Code
+
+### Call Class
+	YTex yt = new YTex(getApplicationContext());
 ### Search
 	yt.Search("tarkan", new CallbackApi.ResData() {
             @Override
