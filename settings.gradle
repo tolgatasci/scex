@@ -1,0 +1,2 @@
+include ':app', ':SCex'
+rootProject.name = "SCex Demo"
