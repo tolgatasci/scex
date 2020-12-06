@@ -38,13 +38,13 @@
                Log.e("work",response.getCollection().size() + "");
             }
         });	
-### Search More 		
-	yt.Search(response.getNextHref(), true, new CallbackApi.ResData<SearchResponse>() {
-            @Override
-            public void data(SearchResponse response) {
-               Log.e("work",response.getCollection().size() + "");
-            }
-        });
+### More every method
+	yt.more(response.getNextHref(), response, new CallbackApi.ResData<SearchResponse>() {
+                    @Override
+                    public void data(SearchResponse response) {
+                        Log.e("work 2",response.getCollection().size() + "");
+                    }
+		});
 ### Search Albums
 	yt.SearchAlbum("tarkan", new CallbackApi.ResData<SearchResponse>() {
             @Override
