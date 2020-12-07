@@ -14,7 +14,7 @@ Add it in your root build.gradle at the end of repositories:
 Add the dependency
 
 	dependencies {
-	        implementation 'com.github.tolgatasci:scex:1.0'
+	        implementation 'com.github.tolgatasci:scex:1.1'
 	}
 	
 ## Example Code
@@ -45,6 +45,15 @@ Add the dependency
         });
 		
 	yt.Tracks("7119603", (CallbackApi.ResData<List<TrackItem>>) response -> Log.e("work",response.size()+ ""));	
+### Get File
+	yt.getFile("url", new CallbackApi.ResData<ResponseMp3>() {
+            @Override
+            public void data(ResponseMp3 response) {
+               Log.e("work",response.getUrl() + "");
+            }
+        });
+		
+	yt.getFile("url", (CallbackApi.ResData<ResponseMp3>) response -> Log.e("work",response.getUrl() + ""));
 		
 ### Playlist
 	yt.Playlist(159147470, new CallbackApi.ResData<Playlist>() {

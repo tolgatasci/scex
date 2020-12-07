@@ -11,6 +11,7 @@ import com.google.gson.GsonBuilder;
 import com.tolgatasci.scex.Config;
 import com.tolgatasci.scex.YTex;
 import com.tolgatasci.scex.model.response.Playlist;
+import com.tolgatasci.scex.model.response.ResponseMp3;
 import com.tolgatasci.scex.model.response.SearchResponse;
 import com.tolgatasci.scex.model.response.TrackItem;
 import com.tolgatasci.scex.model.response.query.ResponseQuery;
@@ -81,6 +82,10 @@ public class Api {
     }
     public void get_tracks(String ids,CallbackApi callbackApi) {
         Call<List<TrackItem>> call = gerritAPI.getTracks(ids,30);
+        call.enqueue(callbackApi);
+    }
+    public void get_mp3(String url,CallbackApi callbackApi) {
+        Call<ResponseMp3> call = gerritAPI.getMp3(url);
         call.enqueue(callbackApi);
     }
     public void get_suggest(String query,CallbackApi callbackApi) {

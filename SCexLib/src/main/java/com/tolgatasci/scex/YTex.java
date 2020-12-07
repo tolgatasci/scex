@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 import com.tolgatasci.scex.model.response.Playlist;
+import com.tolgatasci.scex.model.response.ResponseMp3;
 import com.tolgatasci.scex.model.response.SearchResponse;
 import com.tolgatasci.scex.model.response.TrackItem;
 import com.tolgatasci.scex.model.response.query.ResponseQuery;
@@ -66,6 +67,29 @@ public class YTex {
             public void onResponse(Call call, Response response) {
                 ResponseQuery sug = (ResponseQuery) response.body();
                 callbackApi.data(sug);
+            }
+
+            @Override
+            public void onFailure(Call call, Throwable t) {
+                if(Config.DEBUG)
+                    Log.e(Config.DEBUG_TAG,t.getMessage(),t);
+            }
+        });
+        return "";
+    }
+    /**
+     *  Get Mp3 File
+     *
+     * @param  url  mp3 url
+     * @param  callbackApi  new CallbackApi.ResData<ResponseMp3>(){}
+     * @return      NULL because return callback
+     */
+    public String getFile(String url , CallbackApi.ResData callbackApi){
+        api.get_mp3(url,new CallbackApi() {
+            @Override
+            public void onResponse(Call call, Response response) {
+                ResponseMp3 mp3 = (ResponseMp3) response.body();
+                callbackApi.data(mp3);
             }
 
             @Override

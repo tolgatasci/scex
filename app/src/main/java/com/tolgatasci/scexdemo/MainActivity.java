@@ -6,6 +6,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.tolgatasci.scex.YTex;
 import com.tolgatasci.scex.model.response.Playlist;
+import com.tolgatasci.scex.model.response.ResponseMp3;
 import com.tolgatasci.scex.model.response.SearchResponse;
 import com.tolgatasci.scex.model.response.TrackItem;
 import com.tolgatasci.scex.model.response.query.ResponseQuery;
@@ -38,6 +39,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         YTex yt = new YTex(getApplicationContext(),"");
-        yt.Suggest("tarkan", (CallbackApi.ResData<ResponseQuery>) response -> Log.e("work",response.getCollection().size() + ""));
+        yt.getFile("https://api-v2.soundcloud.com/media/soundcloud:tracks:186613464/6b49f818-be4d-459d-8cfa-5371768459ba/stream/progressive", (CallbackApi.ResData<ResponseMp3>) response -> Log.e("work",response.getUrl() + ""));
     }
 }
