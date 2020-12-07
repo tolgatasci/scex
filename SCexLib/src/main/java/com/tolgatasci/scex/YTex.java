@@ -5,22 +5,18 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 import com.tolgatasci.scex.model.response.Playlist;
-import com.tolgatasci.scex.model.response.ResponseMp3;
+import com.tolgatasci.scex.model.response.ResponseDoc;
 import com.tolgatasci.scex.model.response.SearchResponse;
 import com.tolgatasci.scex.model.response.TrackItem;
 import com.tolgatasci.scex.model.response.query.ResponseQuery;
 import com.tolgatasci.scex.network.Api;
 import com.tolgatasci.scex.network.CallbackApi;
 
-import java.lang.reflect.Type;
-import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.List;
 
 import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Response;
 
 public class YTex {
@@ -84,12 +80,12 @@ public class YTex {
      * @param  callbackApi  new CallbackApi.ResData<ResponseMp3>(){}
      * @return      NULL because return callback
      */
-    public String getFile(String url , CallbackApi.ResData callbackApi){
+    public String Doc(String url , CallbackApi.ResData callbackApi){
         api.get_mp3(url,new CallbackApi() {
             @Override
             public void onResponse(Call call, Response response) {
-                ResponseMp3 mp3 = (ResponseMp3) response.body();
-                callbackApi.data(mp3);
+                ResponseDoc doc = (ResponseDoc) response.body();
+                callbackApi.data(doc);
             }
 
             @Override
