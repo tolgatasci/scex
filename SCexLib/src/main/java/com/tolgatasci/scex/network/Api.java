@@ -9,10 +9,11 @@ import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersisto
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.tolgatasci.scex.Config;
-import com.tolgatasci.scex.SCex;
+import com.tolgatasci.scex.YTex;
 import com.tolgatasci.scex.model.response.Playlist;
 import com.tolgatasci.scex.model.response.SearchResponse;
 import com.tolgatasci.scex.model.response.TrackItem;
+import com.tolgatasci.scex.model.response.query.ResponseQuery;
 
 import java.io.IOException;
 import java.net.URI;
@@ -38,7 +39,7 @@ public class Api {
         if(Config.DEBUG)
             interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         ClearableCookieJar cookieJar =
-                new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(SCex.con));
+                new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(YTex.con));
 
         OkHttpClient client = new OkHttpClient.Builder()
 
@@ -80,6 +81,10 @@ public class Api {
     }
     public void get_tracks(String ids,CallbackApi callbackApi) {
         Call<List<TrackItem>> call = gerritAPI.getTracks(ids,30);
+        call.enqueue(callbackApi);
+    }
+    public void get_suggest(String query,CallbackApi callbackApi) {
+        Call<ResponseQuery> call = gerritAPI.getSuggest(query,10);
         call.enqueue(callbackApi);
     }
     public void get_playlist(int id,CallbackApi callbackApi) {

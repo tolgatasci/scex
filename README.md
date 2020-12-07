@@ -14,7 +14,7 @@ Add it in your root build.gradle at the end of repositories:
 Add the dependency
 
 	dependencies {
-	        implementation 'com.github.tolgatasci:scex:latest'
+	        implementation 'com.github.tolgatasci:scex:1.0'
 	}
 	
 ## Example Code
@@ -23,6 +23,17 @@ Add the dependency
 	SCex yt = new SCex(getApplicationContext(),"cliend_id need");
 	# add user_id parametre api
 	SCex yt = new SCex(getApplicationContext(),"cliend_id need","sc_a_id parametre");
+	
+### Suggest
+	yt.Suggest("Suggest", new CallbackApi.ResData<ResponseQuery>() {
+            @Override
+            public void data(ResponseQuery response) {
+              Log.e("work",response.getCollection().size() + "");
+            }
+        });
+		
+	yt.Suggest("tarkan", (CallbackApi.ResData<ResponseQuery>) response -> Log.e("work",response.getCollection().size() + ""));
+		
 ### Tracks
 
 	# multiple id insert sample 7119603,93675143

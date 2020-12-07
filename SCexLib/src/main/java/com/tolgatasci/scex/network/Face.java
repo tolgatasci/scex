@@ -4,6 +4,7 @@ import com.tolgatasci.scex.Config;
 import com.tolgatasci.scex.model.response.Playlist;
 import com.tolgatasci.scex.model.response.SearchResponse;
 import com.tolgatasci.scex.model.response.TrackItem;
+import com.tolgatasci.scex.model.response.query.ResponseQuery;
 
 import java.util.List;
 
@@ -14,6 +15,9 @@ import retrofit2.http.Query;
 import retrofit2.http.Url;
 
 public interface Face {
+    @GET("search/queries?&offset=0&linked_partitioning=1&app_version=1607091168&app_locale=en")
+    Call<ResponseQuery> getSuggest(@Query("q") String q, @Query("limit") int limit);
+
     @GET("tracks?%5Bobject%20Object%5D=&app_version=1607091168&app_locale=en")
     Call<List<TrackItem>> getTracks(@Query("ids") String ids, @Query("limit") int limit);
 

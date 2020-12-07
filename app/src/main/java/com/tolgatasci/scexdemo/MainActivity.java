@@ -4,8 +4,11 @@ import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
-import com.tolgatasci.scex.SCex;
+import com.tolgatasci.scex.YTex;
+import com.tolgatasci.scex.model.response.Playlist;
+import com.tolgatasci.scex.model.response.SearchResponse;
 import com.tolgatasci.scex.model.response.TrackItem;
+import com.tolgatasci.scex.model.response.query.ResponseQuery;
 import com.tolgatasci.scex.network.CallbackApi;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        SCex yt = new SCex(getApplicationContext(),"cliend_id need");
-        yt.Tracks("7119603", (CallbackApi.ResData<List<TrackItem>>) response -> Log.e("work",response.size()+ ""));
+        YTex yt = new YTex(getApplicationContext(),"");
+        yt.Suggest("tarkan", (CallbackApi.ResData<ResponseQuery>) response -> Log.e("work",response.getCollection().size() + ""));
     }
 }
