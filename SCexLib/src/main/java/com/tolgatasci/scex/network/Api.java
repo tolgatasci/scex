@@ -9,7 +9,7 @@ import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersisto
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.tolgatasci.scex.Config;
-import com.tolgatasci.scex.YTex;
+import com.tolgatasci.scex.SCex;
 import com.tolgatasci.scex.model.response.Playlist;
 import com.tolgatasci.scex.model.response.ResponseDoc;
 import com.tolgatasci.scex.model.response.SearchResponse;
@@ -39,7 +39,7 @@ public class Api {
         if(Config.DEBUG)
             interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         ClearableCookieJar cookieJar =
-                new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(YTex.con));
+                new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(SCex.con));
 
         OkHttpClient client = new OkHttpClient.Builder()
 

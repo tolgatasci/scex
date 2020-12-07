@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
-import com.tolgatasci.scex.YTex;
+import com.tolgatasci.scex.SCex;
 import com.tolgatasci.scex.model.response.ResponseDoc;
 import com.tolgatasci.scex.network.CallbackApi;
 
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        YTex yt = new YTex(getApplicationContext(),"");
+        SCex yt = new SCex(getApplicationContext(),"");
         yt.FileGet("https://api-v2.soundcloud.com/media/soundcloud:tracks:186613464/6b49f818-be4d-459d-8cfa-5371768459ba/stream/progressive", (CallbackApi.ResData<ResponseDoc>) response -> Log.e("work",response.getUrl() + ""));
     }
 }
