@@ -133,6 +133,11 @@ public class Api {
         Call<SearchResponse> call = gerritAPI.getSearchPlaylist(query,30);
         call.enqueue(callbackApi);
     }
+	
+	 public void get_related_tracks(int id,CallbackApi callbackApi) {
+        Call<SearchResponse> call = gerritAPI.getRelated(id,30);
+        call.enqueue(callbackApi);
+    }
 
 
 }

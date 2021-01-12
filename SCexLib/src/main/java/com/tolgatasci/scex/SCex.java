@@ -214,6 +214,31 @@ public class SCex {
         });
         return "";
     }
+	
+	/**
+     *  Related
+     *
+     * @param  id  Track id
+     * @param  callbackApi  new CallbackApi.ResData<SearchResponse>(){}
+     * @return      NULL because return callback
+     */
+    public String Related(int id , CallbackApi.ResData callbackApi){
+        api.get_related_tracks(id,new CallbackApi() {
+            @Override
+            public void onResponse(Call call, Response response) {
+                SearchResponse search = (SearchResponse) response.body();
+                callbackApi.data(search);
+                Log.d(Config.DEBUG_TAG,"NEXT_URL:" + search.getNextHref());
+            }
+
+            @Override
+            public void onFailure(Call call, Throwable t) {
+                if(Config.DEBUG)
+                    Log.e(Config.DEBUG_TAG,t.getMessage(),t);
+            }
+        });
+        return "";
+    }
     /**
      *  Search Only Album
      *
