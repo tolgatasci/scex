@@ -36,7 +36,7 @@ public interface Face {
     Call<SearchResponse> getHomeList();
 	
 	@GET("tracks/{id}/related?linked_partitioning=1&app_version=1610452435&app_locale=en")
-    Call<SearchResponse> getRelated(@Path(value = "track_id", encoded = true) int id, @Query("limit") int limit);
+    Call<SearchResponse> getRelated(@Path(value = "id", encoded = true) int id, @Query("limit") int limit);
 
     /* Track Comments */
     @GET("tracks/{track_id}/comments?threaded=1&filter_replies=0&offset=0&linked_partitioning=1&app_version=1607091168&app_locale=en")
